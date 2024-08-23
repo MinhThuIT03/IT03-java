@@ -1,0 +1,364 @@
+.nav {
+    display: flex;
+    justify-content: space-between; /* Đẩy các phần tử về hai bên */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff; /* Màu nền cho thanh menu */
+    z-index: 1000; /* Đảm bảo thanh menu hiển thị trên các phần tử khác */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng đổ để tạo hiệu ứng nổi */
+height: 90px;
+}
+body {
+    padding-top: 60px; /* Đẩy nội dung bên dưới xuống để không bị thanh menu che khuất */
+}
+
+header, main {
+    margin-top: 20px; /* Tạo khoảng cách giữa các phần tử phía dưới thanh menu */
+}
+
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+}
+.left a{
+    color: black;
+    text-decoration: none;
+}
+.logo{
+    font-family: 'Dancing Script', cursive;
+    font-size: 36px;
+    margin: 0;
+
+}
+.under-logo {
+    font-family: 'Typography', sans-serif;
+    font-size: 16px;
+    margin-top: -10px;
+}
+
+
+.right {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.right li {
+    
+    border-right: 1px solid white;
+    min-width: 120px;
+    text-align: center;
+}
+
+.right a {
+    text-decoration: none; /* Bỏ gạch chân */
+    color: black; /* Màu chữ cho các mục menu */
+    font-size: 20px; /* Kích thước chữ */
+    padding: 15px 8px; /*Chỉnh khung mỗi mục menu vì đã cho mỗi mục thành một block*/
+    display: block;
+}
+
+.right a:hover {
+    color: burlywood /* Màu chữ khi hover */
+}
+
+.right i {
+    font-size: 18px; /* Kích thước của icon tìm kiếm */
+    color: black;
+    display: block;
+    padding: 4px 8px;
+}
+
+.right i:hover {
+    color: burlywood;
+}
+
+
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none; /*Ẩn lúc ban đầu*/
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+    width: 180px;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+}
+
+
+
+ 
+/*Thanh menu của tips và gallery*/
+.body{
+    padding-top: 60px;
+}
+header {
+    /*định cho màu nền nhưng mà che box-shadow của menu chính rồi*/
+    padding: 10px 0; /* Khoảng cách giữa nội dung và cạnh của header */
+
+}
+
+#menu {
+    display: flex;
+    justify-content: center; /* Căn giữa menu trong header */
+}
+
+#menu ul {
+    list-style-type: none; /* Bỏ dấu chấm đầu dòng */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 60%; /* Để menu chiếm toàn bộ chiều rộng của header */
+}
+
+#menu li {
+    flex: 1; /* Chia đều không gian cho các mục */
+    text-align: center; /* Căn giữa nội dung trong mỗi mục */
+}
+
+#menu a {
+    display: block;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+#menu a:hover {
+    background-color: bisque; /* Màu nền khi hover */
+}
+
+
+
+
+/*Phần hiển thị cơ bản*/
+
+main {
+    text-align: center;
+}
+
+.latestpost {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 40px; /* Khoảng cách giữa dòng chữ và các hình ảnh */
+}
+
+
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px; /* Khoảng cách giữa các container */
+    max-width: 100%; /* Giới hạn chiều rộng của container */
+    margin: 0 auto; /* Căn giữa container */
+    flex-wrap: wrap; /* Cho phép các mục tự động xuống dòng */
+   
+}
+
+.menu-item {
+    position: relative;
+    max-width: 35%; /* Để mỗi hình ảnh chiếm tối đa 35% chiều rộng */
+    margin: 10px; /* Khoảng cách giữa các mục */
+    overflow: hidden;
+    flex: 1 1 45%;
+    box-sizing: border-box;
+}
+
+
+.menu-item img {
+    width: 120%;
+    height: 550px;
+    display: block;
+    position: relative;
+    left: -10%;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover img {
+    transform: translateX(-20px); /* Di chuyển hình ảnh sang trái 20px */
+}
+
+
+.description {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;   
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển động */
+}
+
+.menu-item:hover .description {
+    transform: translateY(-50%); /* Khi hover, trượt lên trên ra khỏi khung */
+}
+
+.menu-text {
+    display: block;
+    color: white;
+    font-size: 1.5em; /* Kích thước chữ lớn hơn cho menu-text */
+    font-family: 'Merriweather', serif;
+}
+
+.menu-text, .date {
+    display: block;
+    color: white;
+}
+
+.date {
+    font-size: 0.9em; /* Kích thước chữ nhỏ hơn cho date */
+    opacity: 0; /* Ban đầu ẩn đi */
+    transition: opacity 0.3s ease; /* Hiệu ứng mờ dần */
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+
+.menu-item:hover .date {
+    opacity: 1; /* Khi hover, hiện phần date */
+}
+
+.readmore-container {
+    display: inline-block; /* Giữ cho phần tử có kích thước theo nội dung bên trong */
+}
+.readmore-container ul {
+    list-style-type: none; /* Loại bỏ dấu chấm đầu của danh sách */
+    
+}
+.readmore {
+    display: inline-block; /* Đảm bảo kích thước của liên kết chỉ bao quanh nội dung */
+    padding: 10px 20px; /* Khoảng đệm xung quanh văn bản */
+    border: 2px solid transparent; /* Đặt viền trong suốt để có thể thay đổi khi hover */
+    text-decoration: none; /* Xóa gạch chân dưới liên kết */
+    color: black; /* Màu văn bản */
+    background-color: #f0f0f0; /* Màu nền mặc định */
+    border-radius: 5px; /* Bo góc cho viền */
+}
+
+.readmore:hover {
+    background-color: bisque; /* Đổi màu nền khi hover */
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 900px) {
+    .right {
+        display: none;
+        flex-direction: column;
+        width: 250px; /* Chiều rộng của menu cho máy tính bảng */
+        background-color: #f8f8f8;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top: 0; /* Vị trí menu dưới thanh điều hướng */
+        left: 0; /* Đẩy menu về phía bên trái */
+        z-index: 1000;
+        transition: transform 0.3s ease; /* Hiệu ứng chuyển động khi hiển thị menu */
+    }
+
+    .right.show {
+        transform: translateX(0); 
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block; /* Hiển thị nút toggle */
+    }
+    .right li {
+        margin: 10px 0;
+        text-align: center;
+        list-style: none; /* Xóa các dấu chấm của danh sách nếu cần */
+    }
+    .logo {
+        width: 150px; /* Kích thước logo khi màn hình nhỏ hơn 600px */
+    }
+    .menu-container {
+        display: flex;
+        flex-wrap: wrap; /* Cho phép các phần tử xuống dòng khi cần thiết */
+        gap: 10px; /* Khoảng cách giữa các phần tử */
+        justify-content: center; /* Căn giữa các phần tử */
+    }
+    
+    /* Đảm bảo mỗi .menu-item chiếm 100% chiều rộng của menu-container khi ở kích thước màn hình nhỏ hơn */
+    .menu-item {
+        flex: 1 1 100%; /* Chiếm toàn bộ chiều rộng của container */
+        box-sizing: border-box; /* Bao gồm padding và border trong chiều rộng */
+    }
+    
+    /* Cải thiện cách hiển thị ảnh và mô tả bên trong menu-item */
+    .menu-item img {
+        width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng của phần tử */
+        height: auto; /* Giữ tỷ lệ khung hình */
+        display: block; /* Loại bỏ khoảng trắng bên dưới ảnh */
+        left: 0;
+    }
+    
+    .description {
+        padding: 10px; /* Khoảng đệm bên trong mô tả */
+        bottom: 10px;
+       
+    }
+    
+    .menu-text {
+        font-size: 1rem; /* Kích thước font nhỏ hơn để thu nhỏ văn bản */
+       
+        display: block; /* Đảm bảo phần tử chiếm toàn bộ chiều rộng của cha */
+    }
+    
+    .date {
+        font-size: 0.8rem; /* Có thể thu nhỏ kích thước font của ngày nếu muốn */
+        color: white; /* Đặt màu cho ngày để phân biệt với văn bản chính */
+        opacity: 1;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    .right {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng bóng cho menu */
+       
+    }
+    .logo {
+        width: 120px; /* Kích thước logo khi màn hình nhỏ hơn 600px */
+    }
+    
+    .date {
+        font-size: 0.5rem; /* Có thể thu nhỏ kích thước font của ngày nếu muốn */
+    }
+}
