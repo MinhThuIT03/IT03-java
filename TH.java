@@ -12,8 +12,12 @@ package th.mycompany.th;
 public class TH {
 
     public static void main(String[] args) throws Exception {
-        Diem d1= new Diem (5,15);
-        Diem d2= new Diem (9,8);
+        // Diem d1= new Diem (5,15);
+        // Diem d2= new Diem (9,8);
+        HinhTron d1 = new HinhTron (new Diem(5, 6), 15);
+        HinhTron d2 = new HinhTron (new Diem( 4, 6), 20);
+        System.out.println(d1.ktViTriDtVaDt(d2));
+        System.out.println(d1.tinhDtHinhTron());
 //        d1.hienThi();
 //        double kc=d1.tinhKhoangCach(d2);
 //        System.out.printf("Khoang cach = %.1f\n", kc);
