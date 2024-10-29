@@ -63,7 +63,7 @@ public class HinhTron {
             return -1;
         return 0;
     }
-    public double tinhDtHinhTron(HinhTron dt){
+    public double tinhDtHinhTron(){
         return Math.PI * Math.pow(this.banKinh, 2);
     }
 }
